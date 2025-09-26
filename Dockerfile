@@ -13,10 +13,10 @@ RUN dotnet restore dotnet-core-api-master.sln
 RUN dotnet build dotnet-core-api-master.sln -c Release -o /app/build
 
 # Publish the API project
-RUN dotnet publish dotnet-core-api-master/dotnet-core-api-master.csproj -c Release -o /app/publish
+RUN dotnet publish dotnet-core-api-master/TodoApi.csproj -c Release -o /app/publish
 
 # Stage 2: Runtime
-FROM mcr.microsoft.com/dotnet/aspnet:8.0
+FROM mcr.microsoft.com/dotnet/aspnet:9.0
 WORKDIR /app
 
 # Copy published output
@@ -26,5 +26,6 @@ COPY --from=build /app/publish .
 EXPOSE 80
 
 # Run the API
-ENTRYPOINT ["dotnet", "dotnet-core-api-master.dll"]
+ENTRYPOINT ["dotnet", "TodoApi.dll"]
+
 

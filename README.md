@@ -1,4 +1,5 @@
-#Forked To-do List Api for for a To-do List Application
+# Forked To-do List Api for for a To-do List Application
+
 This also includes a Dockerfile and .dockerignore file for you to be able to just pull it and create an image for your ACR on azure
 - For learning purposes: container webapp deployemnt on Azure
 - official read me in the inner folder
